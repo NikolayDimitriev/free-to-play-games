@@ -1,0 +1,9 @@
+@import "@/styles/mixins";
+
+h1 {
+  color: var(--primary-color);
+
+  @include hover {
+    color: red;
+  }
+}
