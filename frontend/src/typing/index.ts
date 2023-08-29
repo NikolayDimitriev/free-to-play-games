@@ -1,3 +1,5 @@
+import { categories, platforms, sortBy } from "../mock";
+
 export type Game = {
   id: number;
   title: string;
@@ -13,3 +15,11 @@ export type Game = {
 };
 
 export type Games = Game[];
+
+export type APIError = {
+  message: string;
+};
+
+export type Platform = keyof typeof platforms;
+export type Categories = keyof typeof categories;
+export type SortBy = keyof typeof sortBy;

@@ -1,0 +1,105 @@
+@import "@/styles/mixins";
+
+.item {
+  border-radius: 0.25rem;
+  border: 0 solid rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease-in-out;
+  max-width: rem(265);
+  width: 100%;
+
+  @include big-desktop {
+    max-width: rem(296);
+  }
+  @include medium-tablet {
+    max-width: rem(335);
+  }
+  @include small-tablet {
+    max-width: none;
+    height: max-content;
+  }
+
+  @include hover {
+    transform: scale(1.02);
+    box-shadow: 0 0.9rem 1rem rgba(0, 0, 0, 0.199) !important;
+    z-index: 1;
+  }
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: #32383e;
+  background-clip: border-box;
+
+  border-radius: 0.25rem;
+}
+
+.img {
+  height: 50%;
+  border-radius: 0.25rem 0.25rem 0 0;
+}
+
+.info {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: rem(20);
+
+  @include small-tablet {
+    justify-content: flex-start;
+    gap: rem(7);
+  }
+
+  p {
+    margin: 0;
+    color: #7a8288;
+  }
+}
+
+.title {
+  @include title-reset;
+
+  font-weight: 700;
+  color: #aaa;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  @include mobile {
+    white-space: normal;
+  }
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.genre {
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  font-size: 75%;
+  text-align: center;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+
+  font-weight: 700;
+  line-height: 1;
+
+  background-color: #7a8288;
+
+  color: #272b30;
+}
+
+.date {
+  display: inline-block;
+  font-size: 75%;
+}

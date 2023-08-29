@@ -1,0 +1,16 @@
+.header {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(28, 28, 28, 0.6);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+
+  &__container {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__link {
+    line-height: 0;
+    font-size: 0;
+  }
+}

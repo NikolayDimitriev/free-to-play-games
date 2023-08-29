@@ -1,0 +1,23 @@
+@import "@/styles/mixins";
+
+.list {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: rem(20);
+
+  @include list-reset;
+
+  @include big-desktop {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include medium-tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include small-tablet {
+    grid-template-columns: none;
+  }
+}

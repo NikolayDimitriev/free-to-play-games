@@ -1,8 +1,10 @@
 @import "@/styles/normalize";
 @import "@/styles/variables";
+@import "@/styles/mixins";
 
 html {
   box-sizing: border-box;
+  font-size: $baseFontSize + px;
 }
 
 *,
@@ -18,7 +20,7 @@ body {
   overflow-x: hidden;
 
   font-family: var(--main-font);
-  font-size: var(--main-font-size);
+  font-size: $baseFontSize + px;
   font-weight: var(--main-font-weight);
   line-height: var(--main-line-height);
   font-style: normal;
@@ -37,35 +39,21 @@ a {
   color: inherit;
 }
 
-.btn-reset {
-  border: none;
-  padding: 0;
-  margin: 0;
-  background-color: transparent;
-  cursor: pointer;
-}
+.container {
+  width: 100%;
+  max-width: rem(1150);
+  padding: 0 15px;
+  margin: 0 auto;
 
-.title-reset {
-  margin: 0;
-}
+  @include big-desktop {
+    max-width: rem(960);
+  }
 
-.list-reset {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+  @include medium-tablet {
+    max-width: rem(720);
+  }
 
-.input-reset {
-  -webkit-appearance: none;
-  appearance: none;
-  border: none;
-  border-radius: 0;
-  background-color: #fff;
-
-  &::-webkit-search-decoration,
-  &::-webkit-search-cancel-button,
-  &::-webkit-search-results-button,
-  &::-webkit-search-results-decoration {
-    display: none;
+  @include small-tablet {
+    max-width: rem(540);
   }
 }
