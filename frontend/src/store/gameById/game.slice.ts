@@ -1,10 +1,10 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 import { fetchGameById } from "./game.action";
-import { APIError, Game } from "@/src/typing";
+import { APIError, GameById } from "@/src/typing";
 
 type InitialStateType = {
-  game: Game | null;
+  game: GameById | null;
   isLoading: boolean;
   error: APIError | null;
 };
@@ -19,7 +19,7 @@ export const gameByIdSlice = createSlice({
   name: "gameById",
   initialState,
   reducers: {
-    setGame(state, action: PayloadAction<Game>) {
+    setGame(state, action: PayloadAction<GameById>) {
       state.game = action.payload;
       state.isLoading = false;
       state.error = null;

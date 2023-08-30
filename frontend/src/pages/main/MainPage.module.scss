@@ -10,19 +10,19 @@
   &__container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: rem(20);
   }
 
   &__title {
     @include title-reset;
-
+    align-self: flex-start;
     font-weight: 700;
   }
 
   &__subtitle {
     @include title-reset;
-
+    align-self: flex-start;
     font-weight: 400;
   }
 }
-

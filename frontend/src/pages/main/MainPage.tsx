@@ -19,12 +19,18 @@ export const MainPage = function () {
   const [category, setCategory] = useState<Categories>("all");
   const [sortBy, setSortBy] = useState<SortBy>("relevance");
 
+  const controller = new AbortController();
+
   useEffect(() => {
     if (category === "all") {
       dispatch(fetchGames({ platform, "sort-by": sortBy }));
     } else {
       dispatch(fetchGames({ platform, category, "sort-by": sortBy }));
     }
+
+    return () => {
+      controller.abort();
+    };
   }, [platform, category, sortBy]);
 
   return (
