@@ -1,0 +1,14 @@
+@import "@/styles/mixins";
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: rem(20);
+  width: 100%;
+
+  @include mobile {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+}

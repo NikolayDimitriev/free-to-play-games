@@ -7,17 +7,22 @@
 
   padding: rem(30) 0;
 
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: rem(20);
+  }
+
   &__title {
     @include title-reset;
 
     font-weight: 700;
-    margin-bottom: rem(10);
   }
 
   &__subtitle {
     @include title-reset;
 
     font-weight: 400;
-    margin-bottom: rem(30);
   }
 }
+

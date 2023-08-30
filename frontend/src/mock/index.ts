@@ -1,26 +1,26 @@
-export const platforms = {
-  pc: "Windows (PC)",
-  browser: "Browser (Web)",
-  all: "All platforms",
-} as const;
+export const platformsOptions = [
+  { value: "pc", label: "Windows (PC)" },
+  { value: "browser", label: "Browser (Web)" },
+  { value: "all", label: "All platforms" },
+] as const;
 
-export const categories = {
-  mmo: "MMO",
-  mmorpg: "MMORPG",
-  shooter: "Shooter",
-  strategy: "Strategy",
-  moba: "Moba",
-  card: "Card Games",
-  racing: "Racing",
-  sports: "Sports",
-  social: "Social",
-  fighting: "Fighting",
-  all: "All Genres",
-} as const;
+export const categoriesOptions = [
+  { value: "mmo", label: "MMO" },
+  { value: "mmorpg", label: "MMORPG" },
+  { value: "shooter", label: "Shooter" },
+  { value: "strategy", label: "Strategy" },
+  { value: "moba", label: "Moba" },
+  { value: "card", label: "Card Games" },
+  { value: "racing", label: "Racing" },
+  { value: "sports", label: "Sports" },
+  { value: "social", label: "Social" },
+  { value: "fighting", label: "Fighting" },
+  { value: "all", label: "All Genres" },
+] as const;
 
-export const sortBy = {
-  relevance: "Relevance",
-  popularity: "Popularity",
-  "release-date": "Release Date",
-  alphabetical: "Alphabetical",
-} as const;
+export const sortByOptions = [
+  { value: "relevance", label: "Relevance" },
+  { value: "popularity", label: "Popularity" },
+  { value: "release-date", label: "Release Date" },
+  { value: "alphabetical", label: "Alphabetical" },
+] as const;

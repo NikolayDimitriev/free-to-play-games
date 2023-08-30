@@ -10,6 +10,7 @@ import { numWord } from "@/src/utils";
 
 import styles from "./MainPage.module.scss";
 import { Categories, Platform, SortBy } from "@/src/typing";
+import cn from "classnames";
 
 export const MainPage = function () {
   const dispatch = useAppDispatch();
@@ -28,7 +29,7 @@ export const MainPage = function () {
 
   return (
     <section className={styles.main}>
-      <div className="container">
+      <div className={cn(styles["main__container"], "container")}>
         <h1 className={styles["main__title"]}>
           Top Free Games for PC and Browser In {new Date().getFullYear()}!
         </h1>
@@ -42,6 +43,9 @@ export const MainPage = function () {
         )}
 
         <SortBlock
+          platform={platform}
+          category={category}
+          sortBy={sortBy}
           setPlatform={setPlatform}
           setCategory={setCategory}
           setSortBy={setSortBy}
