@@ -5,6 +5,7 @@ export const BASE_URL =
 
 export const API = axios.create({
   baseURL: BASE_URL,
+  withCredentials: true,
   headers: {
     "Content-Type": "application/json",
     "X-RapidAPI-Key": "d9f1350a92mshdcf8ab48a45394ep13fd31jsn950027bd9be3",

@@ -1,3 +1,6 @@
+import cn from "classnames";
+import axios from "axios";
+
 import { useEffect, useState } from "react";
 
 import { useAppSelector, useAppDispatch } from "@/src/store";
@@ -6,11 +9,11 @@ import { fetchGames } from "@/src/store/games";
 import { SortBlock } from "@/src/components/sortBlock/SortBlock";
 import { GamesList } from "@/src/components/gamesList/GamesList";
 
+import { Categories, Platform, SortBy } from "@/src/typing";
+
 import { numWord } from "@/src/utils";
 
 import styles from "./MainPage.module.scss";
-import { Categories, Platform, SortBy } from "@/src/typing";
-import cn from "classnames";
 
 export const MainPage = function () {
   const dispatch = useAppDispatch();
@@ -18,18 +21,17 @@ export const MainPage = function () {
   const [platform, setPlatform] = useState<Platform>("all");
   const [category, setCategory] = useState<Categories>("all");
   const [sortBy, setSortBy] = useState<SortBy>("relevance");
-
-  const controller = new AbortController();
+  const source = axios.CancelToken.source();
 
   useEffect(() => {
     if (category === "all") {
-      dispatch(fetchGames({ platform, "sort-by": sortBy }));
+      dispatch(fetchGames({ platform, "sort-by": sortBy, cancelToken: source.token }));
     } else {
-      dispatch(fetchGames({ platform, category, "sort-by": sortBy }));
+      dispatch(fetchGames({ platform, category, "sort-by": sortBy, cancelToken: source.token }));
     }
 
     return () => {
-      controller.abort();
+      source.cancel("Component unmounted");
     };
   }, [platform, category, sortBy]);
 

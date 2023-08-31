@@ -1,9 +1,9 @@
-import type { Games } from "@/src/typing";
+import type { Games, Params } from "@/src/typing";
 
 import { API } from "@/src/api";
 
 export const gamesService = {
-  async fetchGames(params: Record<string, string>) {
-    return await API.get<Games>("games", { params });
+  async fetchGames({cancelToken, ...params}: Params) {
+    return await API.get<Games>("games", { params, cancelToken });
   },
 };

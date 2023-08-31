@@ -16,6 +16,10 @@ export const GamesList = function () {
     return <div style={{ color: "red" }}>Something went wrong, sorry</div>;
   }
 
+  if (!games) {
+    return <div>Nothing found</div>;
+  }
+
   return (
     games && (
       <ul className={styles.list}>

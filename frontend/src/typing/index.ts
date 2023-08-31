@@ -1,3 +1,4 @@
+import { CancelToken } from "axios";
 import { categoriesOptions, platformsOptions, sortByOptions } from "../mock";
 
 export type GameById = {
@@ -21,7 +22,7 @@ export type GameById = {
 export type Screenshot = {
   id: number;
   image: string;
-}
+};
 
 export type Require = {
   os: string;
@@ -29,7 +30,7 @@ export type Require = {
   memory: string;
   graphics: string;
   storage: string;
-}
+};
 
 export type Game = {
   id: number;
@@ -62,3 +63,10 @@ export type CategoriesOptions = typeof categoriesOptions;
 export type SortByOptions = typeof sortByOptions;
 
 export type UnionOptions = PlatformOptions | CategoriesOptions | SortByOptions;
+
+export type Params = {
+  platform: Platform;
+  category?: Categories;
+  "sort-by": SortBy;
+  cancelToken: CancelToken;
+};
