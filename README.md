@@ -60,3 +60,7 @@ npm install
 npm run start
 ```
 
+Проект будет доступен по ссылке:
+```
+http://localhost:3000/
+```
