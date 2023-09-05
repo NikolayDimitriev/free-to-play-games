@@ -10,10 +10,7 @@ export const fetchGames = createAsyncThunk(
     try {
       const response = await gamesService.fetchGames(params);
 
-      return {
-        allGames: response.data,
-        games: response.data.slice(0, 16),
-      };
+      return response.data;
     } catch (e: unknown) {
       if (axios.isCancel(e)) {
         return thunkAPI.rejectWithValue("Request was canceled");

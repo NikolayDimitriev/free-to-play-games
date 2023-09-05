@@ -2,25 +2,40 @@ import { Categories, Platform, SortBy } from "@/src/typing";
 import { Select } from "../select/Select";
 import { platformsOptions, categoriesOptions, sortByOptions } from "@/src/mock";
 
-import styles from './SortBlock.module.scss';
+import { useAppDispatch } from "@/src/store";
+import {
+  changeCategory,
+  changePlatform,
+  changeSortBy,
+} from "@/src/store/games";
+
+import styles from "./SortBlock.module.scss";
 
 type SortBlockProps = {
   platform: Platform;
   category: Categories;
   sortBy: SortBy;
-  setPlatform(value: Platform): void;
-  setCategory(value: Categories): void;
-  setSortBy(value: SortBy): void;
 };
 
 export const SortBlock = function ({
   platform,
   category,
   sortBy,
-  setPlatform,
-  setCategory,
-  setSortBy,
 }: SortBlockProps) {
+  const dispatch = useAppDispatch();
+
+  const setPlatform = (value: Platform) => {
+    dispatch(changePlatform(value));
+  };
+
+  const setCategory = (value: Categories) => {
+    dispatch(changeCategory(value));
+  };
+
+  const setSortBy = (value: SortBy) => {
+    dispatch(changeSortBy(value));
+  };
+
   return (
     <div className={styles.wrapper}>
       <Select
