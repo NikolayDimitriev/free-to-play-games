@@ -25,6 +25,11 @@
 git clone https://github.com/NikolayDimitriev/free-to-play-games.git
 ```
 
+Перейдите в папку проекта
+```
+cd free-to-play-games
+```
+
 Перейдите в папку Backend
 ```
 cd backend
