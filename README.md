@@ -15,6 +15,7 @@
 - TypeScript
 - [Официальный API Hacker News](https://github.com/HackerNews/API)
 - React Router v6
+- Express
 - SCSS
 
 ## Инструкция
@@ -24,9 +25,24 @@
 git clone https://github.com/NikolayDimitriev/free-to-play-games.git
 ```
 
+Перейдите в папку Backend
+```
+cd backend
+```
+
+Установите зависимости 
+```
+npm install
+```
+
+Запустите сервер
+```
+npm run dev
+```
+
 Перейдите в папку Frontend
 ```
-cd frontend
+cd ../frontend
 ```
 
 Установите зависимости 

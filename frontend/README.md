@@ -1,27 +1,30 @@
-# React + TypeScript + Vite
+# Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Сделана реализация двух страниц по роутам:
 
-Currently, two official plugins are available:
+- ```/``` - главная страница со списком игр
+- ```/game/:id``` - страница игры с подробным описанием
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Технологии
 
-## Expanding the ESLint configuration
+- typescript v5
+- react v18.2
+- redux toolkit
+- react-router-dom v6
+- axios
+- sass
+- eslint
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Инструкция по запуску
 
-- Configure the top-level `parserOptions` property like this:
+Установите зависимости
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+```
+npm install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Запустите проект в dev-режиме
+
+```
+npm run start
+```
