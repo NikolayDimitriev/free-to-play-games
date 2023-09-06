@@ -16,8 +16,8 @@ export const GamesList = function () {
     return <div style={{ color: "red" }}>Something went wrong, sorry</div>;
   }
 
-  if (!games) {
-    return <div>Nothing found</div>;
+  if (!games || games.length === 0) {
+    return <div style={{ color: "red" }}>Nothing found</div>;
   }
 
   return (

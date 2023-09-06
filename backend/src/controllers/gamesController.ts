@@ -13,10 +13,10 @@ export const getGameByIdController = async (req: Request, res: Response) => {
   const gameId = Number(req.query.id);
 
   if (!gameId) {
-    res.send({ data: 'Please enter id' });
+    res.status(400).send({ data: 'Please enter id' });
   }
 
   const game = await getGameById(gameId);
 
-  res.json(game);
+  res.status(200).json(game);
 };
